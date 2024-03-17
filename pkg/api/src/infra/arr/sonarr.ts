@@ -29,7 +29,7 @@ export type SeriesLanguage = {
 export default class SonarrAPI {
   private client: ReturnType<typeof SonarrAPIClient>;
 
-  private version = new ArrVersion(3, 0, 0, 0);
+  private version = new ArrVersion(4, 0, 0, 0);
 
   constructor(url: URL, token: string, version?: string) {
     this.client = SonarrAPIClient(url, token);

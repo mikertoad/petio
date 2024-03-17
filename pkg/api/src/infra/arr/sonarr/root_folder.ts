@@ -3,15 +3,13 @@ import { z } from 'zod';
 
 export const RootFolderSchema = z.array(
   z.object({
-    path: z.string({
-      description: 'does a stringy',
-    }),
+    id: z.number(),
+    path: z.string(),
     accessible: z.boolean(),
     freeSpace: z.number(),
-    unmappedFolders: z.array(
-      z.object({ name: z.string(), path: z.string() }).optional(),
-    ),
-    id: z.number(),
+    unmappedFolders: z
+      .array(z.object({ name: z.string(), path: z.string() }))
+      .optional(),
   }),
 );
 export type RootFolder = z.infer<typeof RootFolderSchema>;
