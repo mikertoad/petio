@@ -87,10 +87,17 @@ export default function SettingsArr(props) {
       value = target.checked;
     }
     if (!currentServer) {
-      setNewServer({
-        ...newServer,
-        [name]: value,
-      });
+      if (name !== 'port') {
+        setNewServer({
+          ...newServer,
+          [name]: value,
+        });
+      } else if (name === 'port') {
+        setNewServer({
+          ...newServer,
+          [name]: target.valueAsNumber,
+        });
+      }
     } else {
       if (name === 'profile') {
         const profile = options.profiles.filter((o) => o.id == value);
