@@ -25,7 +25,7 @@ export default function SettingsArr(props) {
     id: null,
     name: '',
     host: '',
-    port: '',
+    port: 7878,
     protocol: 'http',
     token: '',
     subpath: '',
@@ -38,6 +38,10 @@ export default function SettingsArr(props) {
       name: '',
     },
     language: {
+      id: 0,
+      name: '',
+    },
+    availability: {
       id: 0,
       name: '',
     },
